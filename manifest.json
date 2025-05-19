@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "CERES URL Generator",
+  "version": "1.0",
+  "description": "Generates CERES URLs from museum artifact pages",
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.ceres.mcu.es/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_title": "Generate CERES URL"
+  }
+}
