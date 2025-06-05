@@ -8,6 +8,7 @@ function extractInformation() {
     const idt = hiddenInputs[0].value;
     const table = hiddenInputs[1].value;
 
+    console.log(idt, table);
     // Extract museum code from the last hidden input name
     const museumCode = hiddenInputs[1].name.match(/[^0-9]+$/)[0];
 
@@ -27,6 +28,7 @@ function generateCERESUrl() {
 
 // Create a button to copy the URL
 function createCopyButton() {
+    console.log("Creating button");
     const button = document.createElement('button');
     button.style.cssText = `
         position: fixed;
@@ -52,7 +54,22 @@ function createCopyButton() {
         });
     });
 
-    document.body.appendChild(button);
+    const buttonContainer = document.createElement('div');
+    buttonContainer.style.cssText = `
+        position: relative;
+        width: 100%;
+        height: 50px;
+        background-color: #4CAF50;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    `;
+    button.style.cssText += `
+        font-size: 24px;
+        padding: 10px 40px;
+    `;
+    buttonContainer.appendChild(button);
+    document.body.insertBefore(buttonContainer, document.body.firstChild);
 }
 
 // Add the button when the page loads

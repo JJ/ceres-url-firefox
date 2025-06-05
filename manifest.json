@@ -6,11 +6,8 @@
   "permissions": ["activeTab", "scripting"],
   "content_scripts": [
     {
-      "matches": ["*://*.ceres.mcu.es/*"],
+      "matches": ["*://ceres.mcu.es/*"],
       "js": ["content.js"]
     }
-  ],
-  "action": {
-    "default_title": "Generate CERES URL"
-  }
+  ]
 }
